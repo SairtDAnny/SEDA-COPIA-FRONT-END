@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="card-body"> 
+    <form>
+        
+        <div class="form-group row">
+            <label>REGISTRO DE NUEVO EPP</label>
+        </div>
+        <div class="fosrm-group row">
+            <label for="codigo" class="col-form-label col-sm-2">CODIGO</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="codigo"[(ngModel)]="patrimonio.idpatrimonio">
+            </div>            
+        </div>
+        <div class="form-group row">
+            <label for="descripcionpatrimonio" class="col-form-label col-sm-2">DESCRIPCION DE LA OFICINA</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="descripcionpatrimonio"[(ngModel)]="patrimonio.descripcionpatrimonio">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="stock" class="col-form-label col-sm-2">STOCK</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="stock"[(ngModel)]="patrimonio.stock">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="talla" class="col-form-label col-sm-2">TALLA</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="talla"[(ngModel)]="patrimonio.talla">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="unidadmedida" class="col-form-label col-sm-2">U/MEDIDA</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="unidadmedida"[(ngModel)]="patrimonio.unidadmedida">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="retorno" class="col-form-label col-sm-2">RETORNO</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="retorno"[(ngModel)]="patrimonio.retorno">
+            </div>
+        </div>
+        <button class="btn btn-success" role="button" name="registrar" (click)='create()' >REGISTRAR</button>
+        <!-- <ng-template #elseBlock> -->
+            <button class="btn btn-success" role="button" (click)='update()' >ACTUALIZAR</button>
+        <!-- </ng-template> -->
+    </form>
+    </div> 
+</div> 

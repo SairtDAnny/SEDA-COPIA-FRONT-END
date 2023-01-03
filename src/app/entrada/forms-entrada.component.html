@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="card-body">
+    <form>
+        
+        <div class="form-group row">
+            <label>Registra Nuevo Ingreso de EPP</label>
+        </div>
+        <div class="fosrm-group row">
+            <label for="identradaoficina" class="col-form-label col-sm-2">N° DE OFICIO</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="identradaoficina"[(ngModel)]="entrada.identradaoficina">
+            </div>            
+        </div>
+        <div class="form-group row">
+            <label for="idusuario" class="col-form-label col-sm-2">ENCARGADO</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="idusuario"[(ngModel)]="entrada.usuario">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="idpatrimonio" class="col-form-label col-sm-2">DESCRIPCION</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="idpatrimonio"[(ngModel)]="entrada.patrimonio">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="talla" class="col-form-label col-sm-2">TALLA</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="talla"[(ngModel)]="entrada.talla">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="cantidad" class="col-form-label col-sm-2">CANTIDAD</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="cantidad"[(ngModel)]="entrada.cantidad">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="estadoentrada" class="col-form-label col-sm-2">ESTADO</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="estadoentrada"[(ngModel)]="entrada.estado">
+            </div>
+        </div>
+
+
+        <button class="btn btn-success" role="button" name="registrar" (click)='create()' >REGISTRAR</button>
+        <!-- <ng-template #elseBlock> -->
+            <button class="btn btn-success" role="button" (click)='update()' >ACTUALIZAR</button>
+        <!-- </ng-template> -->
+    </form>
+    </div> 
+</div> 
+<pre>
+    {{entrada | json}}
+</pre>

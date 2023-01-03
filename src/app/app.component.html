@@ -1,0 +1,45 @@
+<!--<app-area></app-area>-->
+<!-- <router-outlet></router-outlet> -->
+
+<body>
+
+    <header>
+      <div class="header__superior">
+        <div class="logo">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7hVk7JXnpgCIADKHnTEYjRf8b5DUFj-6Mhwh4w7SJkA&s" alt="">
+        </div>
+        <div class="search">
+          <input type="search" placeholder="¿Qué deseas buscar?">
+        </div>
+      </div>
+  
+      <div class="container__menu">
+        <div class="menu">
+          <input type="checkbox" id="check__menu">
+          <label id="label__check" for="check__menu">
+            <i class="fas fa-bars icon__menu"></i>
+          </label>
+  
+          <nav>
+            <ul>
+              <li><a id="selected" [routerLink]="['']"></a></li>
+              <li><a [routerLink]="['/area']" >Area</a></li>
+              <li><a [routerLink]="['/patrimonio']">Epp</a></li>
+              <li><a [routerLink]="['/colaborador']">Colaborador</a></li>
+              <li><a [routerLink]="['/entrada']">Registo de Entreda de EPP</a></li>
+              <li><a [routerLink]="['/salida']">Registro de Salida de Almacen</a></li>
+              <li><a href="#">Registo de Entrega al Colaborador</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+
+    </header>
+  
+    
+  
+  </body>
+

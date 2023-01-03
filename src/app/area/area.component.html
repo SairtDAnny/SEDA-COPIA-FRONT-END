@@ -1,0 +1,26 @@
+<router-outlet></router-outlet> 
+<div class="container">
+    <h1>{{titulo}}</h1>
+
+    <button class="btn btn-info" type="button"[routerLink]="['/area/form']">AGREGAR AREA</button>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">N° DE OFICINA</th>
+            <th scope="col">DESCRIPCION DE LA OFICINA</th>
+            <th scope="col">EDITAR</th>
+            <th scope="col">ELIMINAR</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let area of area">
+            <th scope="row">{{area.idArea}}</th>
+            <td>{{area.descripcion}}</td>
+            <td><button type="button" name="button" class="btn btn-primary" [routerLink]="['/area/form',area.idArea]">EDITAR</button></td>
+            <td><button type="button" name="button" class="btn btn-danger" (click)="delete(area)">ELIMINAR</button></td>
+        </tr>      
+        </tbody>
+    </table>
+</div>

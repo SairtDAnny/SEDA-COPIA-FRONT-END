@@ -1,0 +1,32 @@
+<router-outlet></router-outlet>
+<div class="container">
+    <h1>{{titulo}}</h1>
+
+    <button class="btn btn-info" type="button"[routerLink]="['/patrimonio/form']">AGREGAR PATRIMONIO</button>
+
+    <table class="table">
+        <thead>
+        <tr> 
+            <th scope="col">CODIGO</th>
+            <th scope="col">DESCRIPCION DEL PATRIMONIO</th>
+            <th scope="col">STOCK</th>
+            <th scope="col">TALLA</th>
+            <th scope="col">U/MEDIDA</th>
+            <th scope="col">RETORNO</th>
+        </tr>
+        </thead> 
+
+        <tbody>
+        <tr *ngFor="let patrimonio of patrimonio">
+            <th scope="row">{{patrimonio.idpatrimonio}}</th>
+            <td>{{patrimonio.descripcionpatrimonio}}</td>
+            <td>{{patrimonio.stock}}</td>
+            <td>{{patrimonio.talla}}</td>
+            <td>{{patrimonio.unidadmedida}}</td>
+            <td>{{patrimonio.retorno}}</td>
+            <td><button type="button" name="button" class="btn btn-primary" [routerLink]="['/patrimonio/form',patrimonio.idpatrimonio]">EDITAR</button></td>
+            <td><button type="button" name="button" class="btn btn-danger" (click)="delete(patrimonio)">ELIMINAR</button></td> 
+        </tr>      
+        </tbody>
+    </table>
+</div>

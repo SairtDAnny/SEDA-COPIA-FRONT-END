@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="card-body">
+    <form>
+        
+        <div class="form-group row">
+            <label>Registra Nueva Salida</label>
+        </div>
+        <div class="fosrm-group row">
+            <label for="idsalidaoficina" class="col-form-label col-sm-2">Numero de Oficio de Salida</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="idsalidaoficina"[(ngModel)]="salida.idsalidaoficina">
+            </div>            
+        </div>
+        <div class="form-group row">
+            <label for="usuario" class="col-form-label col-sm-2">COLABORADOR</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="usuario"[(ngModel)]="salida.usuario">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="patrimonio" class="col-form-label col-sm-2">PATRIMONIO(EPP)</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="patrimonio"[(ngModel)]="salida.patrimonio">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="talla" class="col-form-label col-sm-2">TALLA</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="talla"[(ngModel)]="salida.talla">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="cantidad" class="col-form-label col-sm-2">CANTIDAD</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="cantidad"[(ngModel)]="salida.cantidad">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="estadosalida" class="col-form-label col-sm-2">ESTADO</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="estadosalida"[(ngModel)]="salida.estadosalida">
+            </div>
+        </div>
+
+        <button class="btn btn-success" role="button" name="registrar" (click)='create()' >REGISTRAR</button>
+        <!-- <ng-template #elseBlock> -->
+            <button class="btn btn-success" role="button" (click)='update()' >ACTUALIZAR</button>
+        <!-- </ng-template> -->
+    </form>
+    </div> 
+</div>

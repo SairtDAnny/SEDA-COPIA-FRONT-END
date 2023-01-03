@@ -1,0 +1,37 @@
+<router-outlet></router-outlet> 
+<div class="container">
+    <h1>{{titulo}}</h1>
+
+    <button class="btn btn-info" type="button"[routerLink]="['/entrada/form']">AGREGAR EPP DE INGRESO</button>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">N° DE OFICIO</th>
+            <th scope="col">ENCARGADO</th>
+            <th class="des" scope="col">DESCRIPCION_DEL_PATRIMONIO_(EPP)</th>
+            <th scope="col">TALLA</th>
+            <th scope="col">CANTIDAD</th>
+            <th scope="col">FECHA_DE_INGRESO</th>
+            <th scope="col">ESTADO</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let entrada of entrada">    
+            <th scope="row">{{entrada.identradaoficina}}</th>
+            <td>{{entrada.idusuario}}</td>
+            <td>{{entrada.idpatrimonio}}</td>
+            <td>{{entrada.talla}}</td>
+            <td>{{entrada.cantidad}}</td>
+            <td>{{entrada.fechaentrada}}</td>
+            <td>{{entrada.estadoentrada}}</td>
+            <td><button type="button" name="button" class="btn btn-primary" [routerLink]="['/entrada/form',entrada.identradaoficina]">EDITAR</button></td>
+            <td><button type="button" name="button" class="btn btn-danger" (click)="delete(entrada)">ELIMINAR</button></td>
+        </tr>      
+        </tbody>
+    </table>
+</div> 
+<pre>
+    {{entrada | json}}
+</pre>

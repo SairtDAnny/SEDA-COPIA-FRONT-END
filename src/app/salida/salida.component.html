@@ -1,0 +1,40 @@
+<router-outlet></router-outlet> 
+<div class="container">
+    <h1>{{titulo}}</h1>
+
+    <button class="btn btn-info" type="button"[routerLink]="['/salida/form']">NUEVA ENTREGA de EPP</button>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">N° DE OFICIO</th>
+            <th scope="col">COLABORADOR</th>
+            <th class="des" scope="col">DESCRIPCION DEL PATRIMONIO_(EPP)</th>
+            <th scope="col">TALLA</th>
+            <th scope="col">CANT</th>
+            <th scope="col">ESTADO</th>
+            <th scope="col">FECHA</th>
+            <th scope="col">FECHA_1°</th>
+            <th scope="col">FECHA_2°</th>
+            <th scope="col">ENCARGADO</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let salida of salida">
+            <th scope="row">{{salida.idsalidaoficina}}</th>
+            <td>{{salida.idcolaborador}}</td>
+            <td>{{salida.idpatrimonio}}</td>
+            <td>{{salida.talla}}</td>
+            <td>{{salida.cantidad}}</td>
+            <td>{{salida.estadosalida}}</td>
+            <td>{{salida.fechasalida}}</td>
+            <td>{{salida.fechaprirenovacion}}</td>
+            <td>{{salida.fechasegrenovacion}}</td>
+            <td>{{salida.idusuario}}</td>
+            <td><button type="button" name="button" class="btn btn-primary" [routerLink]="['/entrada/form',salida.idsalidaoficina]">EDITAR</button></td>
+            <td><button type="button" name="button" class="btn btn-danger" (click)="delete(salida)">ELIMINAR</button></td>
+        </tr>      
+        </tbody>
+    </table>
+</div>

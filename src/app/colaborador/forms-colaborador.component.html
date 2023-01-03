@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="card-body"> 
+    <form>
+
+        <div class="form-group row">
+            <label>REGISTRO DE NUEVO COLABORADOR</label>
+        </div>
+        <div class="fosrm-group row">
+            <label for="idcolaborador" class="col-form-label col-sm-2">DNI</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="idcolaborador"[(ngModel)]="colaborador.idcolaborador">
+            </div>            
+        </div>
+
+        <div class="form-group row">
+            <label for="idarea" class="col-form-label col-sm-2">OFICINA</label>
+            <div     class="col-sm-6">
+                <!-- <input type="text" class="form-control" name="idarea"[(ngModel)]="colaborador.idarea"> -->
+                <!-- <select type="text" list="value" id="cargo" class="form-control" name="cargo"[(ngModel)]="colaborador.cargo" onChange="combo(this, 'cargo')"></select> -->
+                
+                <select type="text" list="value" id="idarea" class="form-control" name="idarea"[(ngModel)]="colaborador.idarea" onChange="combo(this, 'idarea')">
+                   
+                    <option value="select">--elija una oficina--</option>
+                    <OPTION *ngFor="let oficina of areas" [value]="oficina.descripcion">N° {{oficina.idArea}}    {{oficina.descripcion }}</OPTION>
+                </select>
+           
+            </div>
+        </div>  
+        <div class="form-group row">
+            <label for="nombrecolaborador" class="col-form-label col-sm-2">NOMBRE</label>
+            <div     class="col-sm-6">
+                <input type="text" class="form-control" name="nombrecolaborador"[(ngModel)]="colaborador.nombrecolaborador">
+            </div>
+        </div>
+
+        <div class="form-group row"> 
+            <label for="cargo" class="col-form-label col-sm-2">CARGO</label>
+            <div     class="col-sm-6">
+<!-- mensaje de alerta  -->
+<!-- onChange="javascript:alert('prueba');" -->
+                <!-- <input type="text" list="value" id="cargo" class="form-control" name="cargo"[(ngModel)]="colaborador.cargo">    -->
+                <select type="text" list="value" id="cargo" class="form-control" name="cargo"[(ngModel)]="colaborador.cargo" onChange="combo(this, 'cargo')">
+                    <!-- <option value="select">--elija una oficina--</option> -->
+                    <OPTION value="OBRERO">OBRERO</OPTION>
+                    <OPTION value="INGENIERO DE SISTEMAS">INGENIERO DE SISTEMAS</OPTION>
+                    <OPTION value="INGENIERO DE CIVIL">INGENIERO CIVIL</OPTION>
+                    <OPTION value="INGENIERO MECANICO">INGENIERO MECANICO</OPTION>
+                </select>
+
+            </div>
+        </div>
+
+        <button class="btn btn-success" role="button" name="registrar" (click)='create()' >REGISTRAR</button>
+        <!-- <ng-template #elseBlock> -->
+            <button class="btn btn-success" role="button" (click)='update()' >ACTUALIZAR</button>
+        <!-- </ng-template> -->
+    </form>
+    </div> 
+</div> 
+<pre>
+    {{colaborador | json}}
+</pre>

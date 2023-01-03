@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<div class="container">
+    <h1>{{titulo}}</h1>
+
+    <button class="btn btn-info" type="button"[routerLink]="['/colaborador/form']">AGREGAR COLABORADOR</button>
+
+    <table class="table">
+        <thead>
+            <tr> 
+                <th scope="col">DNI</th>
+                <th scope="col">OFICINA</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">CARGO</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let colaborador of colaborador">
+                <th scope="row">{{colaborador.idcolaborador}}</th>
+                <td>{{colaborador.idarea}}</td>
+                <td>{{colaborador.nombrecolaborador}}</td>
+                <td>{{colaborador.cargo}}</td>
+                
+                <td><button type="button" name="button" class="btn btn-primary" [routerLink]="['/colaborador/form',colaborador.idcolaborador]">EDITAR</button></td>
+                <td><button type="button" name="button" class="btn btn-danger" (click)="delete(colaborador)">ELIMINAR</button></td> 
+            </tr>
+        </tbody>
+    </table>
+</div>

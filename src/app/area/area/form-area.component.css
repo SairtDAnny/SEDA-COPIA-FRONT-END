@@ -1,0 +1,12 @@
+
+div{
+    background: #cddcde;
+    opacity: 0.9;
+    background-position: center center;
+}
+div::-webkit-scrollbar{
+    width: 50px;
+}
+div::-webkit-scrollbar-thumb{
+    background: #0074c7;
+}  
